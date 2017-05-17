@@ -14,6 +14,14 @@ namespace Algorithms {
             int[] myArray = new int[] {
                 5, 6, 3, 2, 1, 8, 12, 13, 7
             };
+
+            int[] actual = new int[] {
+                9, 7, 5, 3, 1, 2, 4, 6, 8
+            };
+
+            var expected = new int[] {
+                7, 5, 3, 1, 2, 4, 6, 8, 9
+            };
             string myText2 = "HeLlo, wORLD! hoW Are yOU?";
             Console.WriteLine("split sentence");//split doesn't create a single complete sentence array like splits does. 
             myText.Split().PrintArray();
@@ -77,6 +85,21 @@ namespace Algorithms {
 
             Console.WriteLine();
 
+            Console.WriteLine("Bubble Sort Once---------");
+            Console.WriteLine("original");
+            actual.PrintArray();
+            Console.WriteLine("expected");
+            expected.PrintArray();
+            Console.WriteLine("sorted");
+            ArrayMethods.BubbleSortOnce(actual).PrintArray();
+
+            Console.WriteLine();
+
+            Console.WriteLine("evens or odds-------");
+            IntegerMethods.EvenOrOdd(5).Print();
+            IntegerMethods.EvenOrOdd(6).Print();
+            IntegerMethods.EvenOrOdd(1000).Print();
+            IntegerMethods.EvenOrOdd(501).Print();
 
             Console.ReadLine();
         }

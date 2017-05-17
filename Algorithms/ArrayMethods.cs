@@ -8,7 +8,7 @@ namespace Algorithms {
     public static class ArrayMethods {
         
         /// <summary>
-        /// takes a single integer n and returns an array of positive integers from 1 to n
+        /// takes a single integer n and returns an array of positive integers from 1 to n(codewars)
         /// </summary>
         /// <param name="n"></param>
         /// <returns></returns>
@@ -31,7 +31,7 @@ namespace Algorithms {
     
 
         /// <summary>
-        /// Sort an array of odd values in ascending order - ignoring even numbers
+        /// Sort an array of odd values in ascending order - ignoring even numbers(codewars)
         /// </summary>
         /// <param name="array"></param>
         /// <returns></returns>
@@ -55,6 +55,21 @@ namespace Algorithms {
             return array;
         }
 
-        
+        /// <summary>
+        /// sort an array once (codewars challenge)
+        /// </summary>
+        /// <param name="input"></param>
+        /// <returns></returns>
+        public static int[] BubbleSortOnce(int[] input) {
+            for (int i = 0; i < input.Length - 1; i++) {
+                int currItem = input[i];
+                if(currItem > input[i + 1]) {
+                    input[i] = input[i + 1];
+                    input[i + 1] = currItem;
+                }
+            }
+            return input;
+        }
+
     }
 }

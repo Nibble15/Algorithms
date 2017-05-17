@@ -7,6 +7,9 @@ using System.Threading.Tasks;
 namespace Algorithms {
     public static class ExtensionMethods {
 
+        public static void Print(this string str) {
+            Console.WriteLine(str);
+        }
 
         /// <summary>
         /// prints an array of strings to the console eg: instance.PrintArray();
@@ -19,11 +22,22 @@ namespace Algorithms {
         }
 
         /// <summary>
-        /// returns a string[] split at the parameter 'pos'(position). 
-        /// No parameter returns the string as the only element
-        /// Splits("") returns an array of characters
-        /// Splits(" ") returns an array of words
-        /// Splits("H") returns an array where each index holds all the values of the string after the given letter up to the next instance of that letter
+        /// prints an array of integers to the console eg: instance.PrintArray();
+        /// </summary>
+        /// <param name="array"></param>
+        public static void PrintArray(this int[] array) {
+            for (int i = 0; i < array.Length; i++) {
+                Console.WriteLine(array[i]);
+            }
+        }
+
+        /// <summary>
+        /// returns a string[] split at the parameter 'pos'(position) Default is null. 
+        /// No parameter returns the string as the only element of the new array --
+        /// eg: myString.Splits() --
+        /// myString.Splits("") returns an array of characters --
+        /// myString.Splits(" ") returns an array of words --
+        /// myString.Splits("H") returns an array where each index holds all the values of the string after the given letter up to the next instance of that letter
         /// </summary>
         /// <param name="str"></param>
         /// <param name="pos"></param>
@@ -61,6 +75,7 @@ namespace Algorithms {
             return splitString;
         }
 
+        // private helper method for Splits()
         private static int StringIndexer(string str, string pos) {
             int count = 0;
             if (pos == "") {

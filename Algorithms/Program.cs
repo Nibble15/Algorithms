@@ -101,7 +101,91 @@ namespace Algorithms {
             IntegerMethods.EvenOrOdd(1000).Print();
             IntegerMethods.EvenOrOdd(501).Print();
 
+            Console.WriteLine();
+
+            Console.WriteLine("Guessing game");
+            //guesser class is created below 
+            //codewars challenge
+            Guesser guesser = new Guesser(10, 2);
+            Console.WriteLine(guesser.Guess(5));
+            Console.WriteLine(guesser.Guess(10));
+
+            Guesser guesser2 = new Guesser(10, 2);
+            Console.WriteLine(guesser2.Guess(5));
+            Console.WriteLine(guesser2.Guess(6));
+            //Console.WriteLine(guesser2.Guess(10)); //uncomment to throw an error
+
+            Console.WriteLine();
+
+            Console.WriteLine("Invert values challenge");
+            //codewars challenge
+            int[] InvertValues(int[] input)
+            {
+                int[] output = new int[input.Length];
+                for (var i = 0; i < input.Length; i++) {
+                    output[i] = (~input[i]) + 1;
+                }
+                return output;
+            }
+
+            int[] invertedValues = InvertValues(myArray);
+
+            Console.WriteLine("The items of myArray are:");
+            foreach (var item in myArray) {
+                Console.WriteLine(item);
+            }
+
+            Console.WriteLine("The inverted values of the items of myArray are:");
+            foreach (var item in invertedValues) {
+                Console.WriteLine(item);
+            }
+
+            Console.WriteLine();
+           
+            //algorithm challenge treehouse
+            List<int> GetPowersOf2(int number) {
+                List<int> powersOf2 = new List<int>(number + 1);
+                for (var i = 0; i < number + 1; i++) {
+                    powersOf2.Add((int)Math.Pow(2, i));
+                }
+                return powersOf2;
+            }
+
+            var list = GetPowersOf2(4);
+            foreach (var item in list) {
+                Console.WriteLine(item);
+            }
+
+
             Console.ReadLine();
+        }
+    }
+
+    //codewars challenge
+    public class Guesser {
+        private int number;
+        private int lives;
+        private int guesses = 0;
+
+        public Guesser(int number, int lives) {
+            this.number = number;
+            this.lives = lives;
+        }
+
+        public bool Guess(int n) {
+            if (guesses > lives) {
+                throw new System.Exception();
+            }
+
+            if (n != this.number) {
+                this.lives--;
+                guesses++;
+            }
+
+            if (n == this.number) {
+                return true;
+            }
+            return false;
         }
     }
 }

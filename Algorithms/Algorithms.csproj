@@ -43,6 +43,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ArrayMethods.cs" />
+    <Compile Include="Dictionaries.cs" />
     <Compile Include="ExtensionMethods.cs" />
     <Compile Include="IntegerMethods.cs" />
     <Compile Include="Program.cs" />

@@ -117,10 +117,8 @@ namespace Algorithms {
 
             Console.WriteLine();
 
-            Console.WriteLine("Invert values challenge");
-            //codewars challenge
-            int[] InvertValues(int[] input)
-            {
+            Console.WriteLine("Codewars - invert values challenge");
+            int[] InvertValues(int[] input) {
                 int[] output = new int[input.Length];
                 for (var i = 0; i < input.Length; i++) {
                     output[i] = (~input[i]) + 1;
@@ -128,21 +126,35 @@ namespace Algorithms {
                 return output;
             }
 
-            int[] invertedValues = InvertValues(myArray);
-
-            Console.WriteLine("The items of myArray are:");
-            foreach (var item in myArray) {
-                Console.WriteLine(item);
+            int[] InvertValues2(int[] input) {
+                for (var i = 0; i < input.Length; i++) {
+                    input[i] = (~input[i]) + 1;
+                }
+                return input;
             }
 
-            Console.WriteLine("The inverted values of the items of myArray are:");
+            int[] invertedValues = InvertValues(myArray);
+            int[] invertedValues2 = InvertValues2(myArray);
+
+            Console.Write("The value of the items of myArray are: ");
+            foreach (var item in myArray) {
+                Console.Write(item + " ");
+            }
+            Console.WriteLine();
+            Console.Write("The inverted values of the items of myArray are: ");
             foreach (var item in invertedValues) {
-                Console.WriteLine(item);
+                Console.Write(item + " ");
+            }
+
+            Console.WriteLine();
+            Console.Write("The inverted values from of the items of myArray using InvertedValues2 are: ");
+            foreach (var item in invertedValues2) {
+                Console.Write(item + " ");
             }
 
             Console.WriteLine();
            
-            //algorithm challenge treehouse
+            //Treehouse challenge
             List<int> GetPowersOf2(int number) {
                 List<int> powersOf2 = new List<int>(number + 1);
                 for (var i = 0; i < number + 1; i++) {
@@ -155,6 +167,8 @@ namespace Algorithms {
             foreach (var item in list) {
                 Console.WriteLine(item);
             }
+            
+
 
 
             Console.ReadLine();
